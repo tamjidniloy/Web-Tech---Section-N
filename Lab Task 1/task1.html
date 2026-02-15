@@ -2,8 +2,73 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Student Information Form</title>
   </head>
-  <body></body>
+  <body>
+    <h2>Personal Information</h2>
+    <form>
+      <label for="name">Full Name:</label><br />
+      <input type="text" /><br /><br />
+      <label for="dob">Date of Birth:</label><br />
+      <input type="date" /><br /><br />
+      <label>Gender:</label><br />
+      <input type="radio" id="male" name="gender" value="Male" />
+      <label for="male">Male</label>
+      <input type="radio" id="female" name="gender" value="Female" />
+      <label for="female">Female</label>
+      <input type="radio" id="other" name="gender" value="Other" />
+      <label for="other">Other</label>
+      <br /><br />
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" required /><br /><br />
+
+      <h2>Academic Information</h2>
+
+      <!-- Student ID -->
+      <label for="sid">Student ID:</label><br />
+      <input type="text" id="sid" name="student_id" required /><br /><br />
+
+      <!-- CGPA -->
+      <label for="cgpa">CGPA:</label><br />
+      <input
+        type="number"
+        id="cgpa"
+        name="cgpa"
+        step="0.01"
+        min="0"
+        max="4.00"
+      /><br /><br />
+
+      <!-- Department -->
+      <label for="dept">Department:</label><br />
+      <select id="dept" name="department">
+        <option value="">-- Select Department --</option>
+        <option value="CSE">CSE</option>
+        <option value="EEE">EEE</option>
+        <option value="BBA">BBA</option>
+        <option value="English">English</option>
+      </select>
+      <br /><br />
+
+      <!-- Skills -->
+      <label>Skills:</label><br />
+      <input type="checkbox" id="html" name="skills" value="HTML" />
+      <label for="html">HTML</label>
+
+      <input type="checkbox" id="css" name="skills" value="CSS" />
+      <label for="css">CSS</label>
+
+      <input type="checkbox" id="js" name="skills" value="JavaScript" />
+      <label for="js">JavaScript</label>
+      <br /><br />
+
+      <!-- Upload CV -->
+      <label for="cv">Upload CV:</label><br />
+      <input type="file" id="cv" name="cv" /><br /><br />
+
+      <!-- Submit -->
+      <input type="submit" value="Submit Form" />
+      <input type="reset" value="Clear" />
+    </form>
+  </body>
 </html>
