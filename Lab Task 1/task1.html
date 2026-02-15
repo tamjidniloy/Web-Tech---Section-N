@@ -24,7 +24,7 @@
 
       <h2>Academic Information</h2>
       <label>Student ID:</label><br />
-      <input type="text" /><br /><br />
+      <input type="text" maxlength="10" /><br /><br />
       <label>CGPA:</label><br />
       <input type="number" /><br /><br />
 
@@ -37,20 +37,15 @@
       <br /><br />
 
       <label>Skills:</label><br />
-      <input type="checkbox" id="html" name="skills" value="HTML" />
+      <input type="checkbox" />
       <label for="html">HTML</label>
       <input type="checkbox" />
       <label for="css">CSS</label>
-      <input type="checkbox" />
       <br /><br />
 
-      <!-- Upload CV -->
-      <label for="cv">Upload CV:</label><br />
-      <input type="file" id="cv" name="cv" /><br /><br />
-
-      <!-- Submit -->
-      <input type="submit" value="Submit Form" />
-      <input type="reset" value="Clear" />
+      <label>Upload your certificate :</label><br />
+      <input type="file" /><br /><br />
     </form>
+    <button>Submit All</button>
   </body>
 </html>
