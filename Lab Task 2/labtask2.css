@@ -14,9 +14,9 @@ header {
   border: 2px solid black;
 }
 
-.profile img {
-  width: 100px;
-  height: 100px;
+img {
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   margin: 10px 0;
   object-fit: cover;
