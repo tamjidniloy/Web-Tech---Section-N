@@ -1,9 +1,65 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="calculator">
+      <div id="display">
+        <h1 id="displayText">0</h1>
+      </div>
+
+      <div id="buttons">
+        <button id="clear">C</button>
+        <button>/</button>
+        <button>*</button>
+        <button>-</button>
+
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>+</button>
+
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>=</button>
+
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>0</button>
+      </div>
+    </div>
+
+    <script>
+      let display = document.getElementById("displayText");
+      let buttons = document.querySelectorAll("#buttons button");
+
+      let currentInput = "";
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          let value = button.innerText;
+
+          if (value === "C") {
+            currentInput = "";
+            display.innerText = "0";
+          } else if (value === "=") {
+            try {
+              currentInput = eval(currentInput).toString();
+              display.innerText = currentInput;
+            } catch {
+              display.innerText = "Error";
+              currentInput = "";
+            }
+          } else {
+            currentInput += value;
+            display.innerText = currentInput;
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
