@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Form</title>
+</head>
+<body>
+
+<h2>Registration Form</h2>
+
+<form method="POST">
+
+Name: <input type="text" name="name"><br><br>
+
+Email: <input type="text" name="email"><br><br>
+
+Username: <input type="text" name="username"><br><br>
+
+Password: <input type="password" name="password"><br><br>
+
+Confirm Password: <input type="password" name="confirm"><br><br>
+
+Age: <input type="number" name="age"><br><br>
+
+Gender:
+<input type="radio" name="gender" value="Male"> Male
+<input type="radio" name="gender" value="Female"> Female <br><br>
+
+Course:
+<select name="course">
+    <option value="">Select</option>
+    <option value="CSE">CSE</option>
+    <option value="BBA">BBA</option>
+</select><br><br>
+
+<input type="checkbox" name="terms"> Accept Terms <br><br>
+
+<input type="submit" name="submit" value="Register">
+
+</form>
+
+<?php
+
+if(isset($_POST['submit'])){
+
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $confirm = $_POST['confirm'];
+    $age = $_POST['age'];
+
+    // STEP BY STEP CHECK
+
+    if($name == ""){
+        echo "Name is required";
+    }
+    elseif($email == ""){
+        echo "Email is required";
+    }
+    elseif($username == ""){
+        echo "Username is required";
+    }
+    elseif(strlen($username) < 5){
+        echo "Username must be 5 characters";
+    }
+    elseif(strlen($password) < 6){
+        echo "Password must be 6 characters";
+    }
+    elseif($password != $confirm){
+        echo "Passwords do not match";
+    }
+    elseif($age < 18){
+        echo "Age must be 18+";
+    }
+    elseif(!isset($_POST['gender'])){
+        echo "Select gender";
+    }
+    elseif($_POST['course'] == ""){
+        echo "Select course";
+    }
+    elseif(!isset($_POST['terms'])){
+        echo "Accept terms first";
+    }
+    else{
+        echo "<h3>Registration Successful!</h3>";
+        echo "Name: $name <br>";
+        echo "Email: $email <br>";
+        echo "Username: $username <br>";
+        echo "Age: $age <br>";
+        echo "Gender: " . $_POST['gender'] . "<br>";
+        echo "Course: " . $_POST['course'] . "<br>";
+    }
+
+}
+
+?>
+
+</body>
+</html>
